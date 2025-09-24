@@ -22,7 +22,7 @@
             android:id="@+id/list_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Espresso poured on a vanilla ice cream. Served in a cappuccino cup."
+            android:text="Click a coffee to see details."
             android:textSize="16sp"
             android:paddingBottom="16dp" />
 
@@ -53,6 +53,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="CAFFE LATTE"
+            android:textSize="18sp"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/cappuccino"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CAPPUCCINO"
+            android:textSize="18sp"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/mocha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MOCHA"
             android:textSize="18sp"
             android:padding="8dp"
             android:background="?attr/selectableItemBackground"
