@@ -7,12 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 class DetailFragment : Fragment() {
-    private var param1: String? = null
-    private var param2: String? = null
 
     private val coffeeTitle: TextView?
         get() = view?.findViewById(R.id.coffee_title)
@@ -21,10 +16,6 @@ class DetailFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
@@ -34,8 +25,14 @@ class DetailFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_detail, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val coffeeId = arguments?.getInt(COFFEE_ID, 0) ?: 0
+        setCoffeeData(coffeeId)
+    }
+
     fun setCoffeeData(id: Int) {
-        when(id){
+        when (id) {
             R.id.affogato -> {
                 coffeeTitle?.text = getString(R.string.affogato_title)
                 coffeeDesc?.text = getString(R.string.affogato_desc)
@@ -52,12 +49,13 @@ class DetailFragment : Fragment() {
     }
 
     companion object {
+        private const val COFFEE_ID = "COFFEE_ID"
+
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(coffeeId: Int) =
             DetailFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putInt(COFFEE_ID, coffeeId)
                 }
             }
     }
