@@ -1,41 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    tools:context=".ListFragment">
+    android:padding="16dp">
+
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
+
         <TextView
+            android:id="@+id/list_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="@string/coffee_list"/>
-        <View
+            android:text="Coffee List"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/list_desc"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginVertical="20dp"
-            android:background="?android:attr/dividerVertical" />
+            android:layout_height="wrap_content"
+            android:text="Espresso poured on a vanilla ice cream. Served in a cappuccino cup."
+            android:textSize="16sp"
+            android:paddingBottom="16dp" />
+
         <TextView
             android:id="@+id/affogato"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="@string/affogato_title"/>
+            android:text="AFFOGATO"
+            android:textSize="18sp"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true" />
+
         <TextView
             android:id="@+id/americano"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="@string/americano_title"/>
+            android:text="AMERICANO"
+            android:textSize="18sp"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true" />
+
         <TextView
             android:id="@+id/latte"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="@string/latte_title"/>
+            android:text="CAFFE LATTE"
+            android:textSize="18sp"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true" />
+
     </LinearLayout>
 </ScrollView>
